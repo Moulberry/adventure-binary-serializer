@@ -8,13 +8,13 @@ public sealed interface BinaryComponentSerializer permits BinaryComponentSeriali
 
     BinaryComponentSerializer INSTANCE = new BinaryComponentSerializerImpl();
 
-    default byte[] serializeComponent(Component value) throws IOException {
+    default byte[] serialize(Component value) throws IOException {
         ByteArrayOutputStream baos = new ByteArrayOutputStream();
         serializeComponent(value, new DataOutputStream(baos));
         return baos.toByteArray();
     }
 
-    default Component deserializeComponent(byte[] bytes) throws IOException {
+    default Component deserialize(byte[] bytes) throws IOException {
         ByteArrayInputStream bais = new ByteArrayInputStream(bytes);
         return deserializeComponent(new DataInputStream(bais));
     }

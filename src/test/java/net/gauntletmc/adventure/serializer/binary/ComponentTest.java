@@ -9,8 +9,8 @@ public class ComponentTest {
 
     public void test(Component component) {
         try {
-            byte[] serialized = BinaryComponentSerializer.INSTANCE.serializeComponent(component);
-            Component result = BinaryComponentSerializer.INSTANCE.deserializeComponent(serialized);
+            byte[] serialized = BinaryComponentSerializer.INSTANCE.serialize(component);
+            Component result = BinaryComponentSerializer.INSTANCE.deserialize(serialized);
 
             Assertions.assertEquals(component, result);
         } catch(IOException e) {
