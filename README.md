@@ -15,7 +15,7 @@ Step 2. Add Adventure Binary Serializer as a dependency
 
 ```
 dependencies {
-    implementation("com.github.Moulberry:adventure-binary-serializer:-SNAPSHOT")
+    implementation("com.github.Moulberry:adventure-binary-serializer:master-SNAPSHOT")
 }
 ```
 
