@@ -10,7 +10,7 @@ java {
 }
 
 allprojects {
-	group = "net.gauntletmc.adventure.serializer.binary"
+	group = "net.gauntletmc"
 	version = "1.0.0"
 }
 
@@ -33,9 +33,9 @@ tasks.withType<Test> {
 }
 
 publishing {
-    publications {
-        mavenJava(MavenPublication) {
-            from components.java
-        }
-    }
+	publications {
+		create<MavenPublication>("maven") {
+			from(components["java"])
+		}
+	}
 }
