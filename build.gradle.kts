@@ -30,3 +30,11 @@ dependencies {
 tasks.withType<Test> {
 	useJUnitPlatform()
 }
+
+publishing {
+    publications {
+        mavenJava(MavenPublication) {
+            from components.java
+        }
+    }
+}
